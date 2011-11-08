@@ -1,0 +1,25 @@
+The File Stager is created to solve the problem of the slow LHCb analysis jobs run on an offline batch cluster, such as Stoomboot. It is based on the idea of caching the input files on a closer location, to reduce the latency of the remote access (typically using rfio or dcap protocol) to these files by the analysis jobs. It works in a streamlined fashion: processing of the event data inside a "staged" local file happens concurrently (in parallel, overlapped) with staging the next input file from the Grid. Copying of a file should start at the same time that the previous file is opened for processing. For example: file_2 is staged while file_1 is processed, file_3 is staged while file_2 is processed an so on. Under the hoods, lcg-cp is used to copy the files from the Grid storage, which is typically a wrapper (LCG_Utils) around a gridcopy middleware command.
+Under normal circumstances (network not saturated, event processing time ~10ms, file sizes ~2GB) staging of a file finishes earlier than processing, so the stager effectively performs like having the files on a local disk. If staging of a file is not finished before it is necessary for processing, the FileStager will block until the transfer is completed. The only imposed waiting time is during staging of the very first file.
+A staged file is kept on the local storage only for the time required by the job to process that file, after which it is automatically removed. In case the job fails/crashes, any orphan staged files associated with a job will be removed by a separate independent garbage-collection process.
+The stager also works with Event Tag Collections, in which case the .root file is scanned to obtain the original Grid files that contain the event data.
+The input files specified in the job options should be picked up by the FileStager package and translated to local URLs which the EventSelector will use for the job.
+
+Requirements for using the File Stager
+	     A valid grid certificate
+	     Correct setup of the LHCb software environment:
+    	     	     source /project/bfys/lhcb/sw/LbLogin.sh
+	     
+	     Grid environment setup correctly:
+	     	  source /global/ices/lcg/glite3.2.6/external/etc/profile.d/grid-env.sh
+	
+	(check if the environment variable LCG_GFAL_INFOSYS is correctly set after this)	
+
+1. go to FileStager/cmt and type: cmt make
+This will compile the package. There should be no errors under normal circumstances.
+You need a working grid certificate to use the FileStager. To activate a grid proxy certificate, do:
+
+voms-proxy-init -voms lhcb -out $HOME/.globus/gridproxy.cert
+export X509_USER_PROXY=${HOME}/.globus/gridproxy.cert
+
+This way, the certificate will NOT be stored in the local /tmp directory, but instead in a location reachable from Stoomboot.
+
