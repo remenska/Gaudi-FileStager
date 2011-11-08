@@ -1,0 +1,124 @@
+Thu Jun 24 13:27:18 CEST 2010
+# Building group all
+#CMT---> Info: Execute action make => gmake bin=../x86_64-slc5-gcc43-opt/ all
+gmake[1]: Entering directory `/project/bfys/dremensk/new/DaVinci_v25r0/FileStager/cmt'
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/x86_64-slc5-gcc43-opt.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/setup.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/constituents.make
+#CMT---> (constituents.make) Rebuilding library links
+#CMT---> (constituents.make) all done
+#CMT---> (constituents.make) Building install_more_includes.make
+#CMT---> Info: Document install_more_includes
+#CMT---> (constituents.make) Creating install_more_includes.lock and Starting install_more_includes
+Installing files from more ../FileStager to /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/include
+installation done
+#CMT---> (constituents.make) install_more_includes done
+#CMT---> (constituents.make) Building FileStager_python.make
+#CMT---> Info: Document FileStager_python
+#CMT---> (constituents.make) Creating FileStager_python.lock and Starting FileStager_python
+no source  ../python
+installation done
+#CMT---> (constituents.make) FileStager_python done
+#CMT---> (constituents.make) Building FileStagerGenConfUser.make
+#CMT---> Info: Document FileStagerGenConfUser
+#CMT---> (constituents.make) Creating FileStagerGenConfUser.lock and Starting FileStagerGenConfUser
+genconfuser.py --lockerpath /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiPolicy/scripts -r /project/bfys/dremensk/new/DaVinci_v25r0/FileStager/python -o /project/bfys/dremensk/new/DaVinci_v25r0/FileStager/genConf/FileStager/FileStager_user_confDb.py FileStager 
+INFO: 2010-06-24_13:27:36 - Locking on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock
+INFO: 2010-06-24_13:27:36 - Lock on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock released
+INFO: No ConfigurableUser found
+#CMT---> (constituents.make) FileStagerGenConfUser done
+#CMT---> (constituents.make) Building FileStagerConfUserDbMerge.make
+#CMT---> Info: Document FileStagerConfUserDbMerge
+#CMT---> (constituents.make) Creating FileStagerConfUserDbMerge.lock and Starting FileStagerConfUserDbMerge
+Running merge_genconfDb  FileStagerConfUserDbMerge
+python /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiPolicy/scripts/merge_files.py \
+          --do-merge \
+          --input-file /project/bfys/dremensk/new/DaVinci_v25r0/FileStager/genConf/FileStager/FileStager_user_confDb.py \
+          --merged-file /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python/DaVinci_v25r0_merged_confDb.py	  
+INFO:LockFile:2010-06-24_13:27:38 - Locking on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock
+INFO:LockFile:2010-06-24_13:27:38 - Lock on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) FileStagerConfUserDbMerge done
+#CMT---> (constituents.make) Building FileStager.make
+#CMT---> Info: Library FileStager
+#CMT---> (constituents.make) Starting FileStager
+#CMT---> FileStager : library ok
+#CMT---> FileStager ok
+#CMT---> installation done
+#CMT---> (constituents.make) FileStager done
+#CMT---> (constituents.make) Building FileStagerConf.make
+#CMT---> Info: Document FileStagerConf
+#CMT---> (constituents.make) Creating FileStagerConf.lock and Starting FileStagerConf
+Installing /project/bfys/dremensk/new/DaVinci_v25r0/FileStager/genConf/FileStager in /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python
+Copy '../../../FileStager/genConf/FileStager/FileStager_user_confDb.py' -> '/project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python/FileStager/FileStager_user_confDb.py'
+#CMT---> (constituents.make) FileStagerConf done
+#CMT---> (constituents.make) Building FileStager_python_init.make
+#CMT---> Info: Document FileStager_python_init
+#CMT---> (constituents.make) Creating FileStager_python_init.lock and Starting FileStager_python_init
+#CMT---> (constituents.make) FileStager_python_init done
+#CMT---> (constituents.make) Building FileStagerConfDbMerge.make
+#CMT---> Info: Document FileStagerConfDbMerge
+#CMT---> (constituents.make) Creating FileStagerConfDbMerge.lock and Starting FileStagerConfDbMerge
+#CMT---> (constituents.make) FileStagerConfDbMerge done
+#CMT---> (constituents.make) Building zip_FileStager_python_modules.make
+#CMT---> Info: Document zip_FileStager_python_modules
+#CMT---> (constituents.make) Creating zip_FileStager_python_modules.lock and Starting zip_FileStager_python_modules
+python /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiPolicy/scripts/ZipPythonDir.py /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python
+INFO:LockFile:2010-06-24_13:27:46 - Locking on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock
+INFO:zipdir:Zipping directory '/project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python'
+INFO:zipdir: M -> DaVinci_v25r0_merged_confDb.py
+INFO:zipdir: M -> FileStager/FileStager_user_confDb.py
+INFO:zipdir: U -> FileStager/FileStagerConf.py
+INFO:zipdir: U -> FileStager/FileStager_confDb.py
+INFO:zipdir: U -> FileStager/__init__.py
+INFO:zipdir:File '/project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/python.zip' closed
+INFO:LockFile:2010-06-24_13:27:46 - Lock on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) zip_FileStager_python_modules done
+#CMT---> (constituents.make) Building GarbageCollector.make
+#CMT---> Info: Application GarbageCollector
+#CMT---> (constituents.make) Starting GarbageCollector
+#CMT---> (GarbageCollector.make) /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiUtils/x86_64-slc5-gcc43-opt/GaudiUtilsLib.stamp: No rule for such target
+if echo /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiUtils/x86_64-slc5-gcc43-opt/GaudiUtilsLib.stamp | grep 'FileStagersetup\.make$' >/dev/null; then\
+	 echo "#CMT--->" "(GarbageCollector.make): /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiUtils/x86_64-slc5-gcc43-opt/GaudiUtilsLib.stamp: File no longer generated" >&2; exit 0; fi
+#CMT---> (GarbageCollector.make) /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiKernel/x86_64-slc5-gcc43-opt/GaudiKernel.stamp: No rule for such target
+if echo /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiKernel/x86_64-slc5-gcc43-opt/GaudiKernel.stamp | grep 'FileStagersetup\.make$' >/dev/null; then\
+	 echo "#CMT--->" "(GarbageCollector.make): /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiKernel/x86_64-slc5-gcc43-opt/GaudiKernel.stamp: File no longer generated" >&2; exit 0; fi
+#CMT---> building application ../x86_64-slc5-gcc43-opt/GarbageCollector.exe
+lcg-g++-4.3.2 -Wl,-Bdynamic  -ldl -Wl,--as-needed -Wl,--no-undefined  -o ../x86_64-slc5-gcc43-opt/GarbageCollector.exe.new ../x86_64-slc5-gcc43-opt/GarbageCollector.o -L/project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/DAVINCI/DAVINCI_v25r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/HLT/HLT_v9r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/ANALYSIS/ANALYSIS_v4r0p1/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/REC/REC_v8r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/LBCOM/LBCOM_v8r1/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/PHYS/PHYS_v9r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/lhcb/sw/lhcb/LHCB/LHCB_v29r0/InstallArea/x86_64-slc5-gcc43-opt/lib  -L/project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/InstallArea/x86_64-slc5-gcc43-opt/lib      -lGaudiUtilsLib   -lGaudiKernel   -L/project/bfys/lhcb/sw/lcg/external/ROOT/5.26.00a/x86_64-slc5-gcc43-opt/root/lib -lReflex  -L/project/bfys/lhcb/sw/lcg/external/ROOT/5.26.00a/x86_64-slc5-gcc43-opt/root/lib -lCore -lCint -lTree -lpthread  -lRIO    -L/project/bfys/lhcb/sw/lcg/external/Boost/1.39.0_python2.5/x86_64-slc5-gcc43-opt/lib  -lboost_system-gcc43-mt  -lboost_filesystem-gcc43-mt  -lboost_regex-gcc43-mt  -lboost_thread-gcc43-mt           && mv -f ../x86_64-slc5-gcc43-opt/GarbageCollector.exe.new ../x86_64-slc5-gcc43-opt/GarbageCollector.exe
+#CMT---> GarbageCollector ok
+#CMT---> installation done
+#CMT---> (constituents.make) GarbageCollector done
+#CMT---> (constituents.make) Building FileStagerRootMap.make
+#CMT---> Info: Document FileStagerRootMap
+#CMT---> (constituents.make) Creating FileStagerRootMap.lock and Starting FileStagerRootMap
+#CMT---> (constituents.make) FileStagerRootMap done
+#CMT---> (constituents.make) Building FileStagerMergeMap.make
+#CMT---> Info: Document FileStagerMergeMap
+#CMT---> (constituents.make) Creating FileStagerMergeMap.lock and Starting FileStagerMergeMap
+#CMT---> (constituents.make) FileStagerMergeMap done
+#CMT---> (constituents.make) Building FileStagerGen.make
+#CMT---> Info: Document FileStagerGen
+#CMT---> (constituents.make) Creating FileStagerGen.lock and Starting FileStagerGen
+Running merge_rootmap  FileStagerGen
+python /project/bfys/dremensk/new/GAUDI/GAUDI_v21r7/GaudiPolicy/scripts/merge_files.py --do-merge --input-file ../x86_64-slc5-gcc43-opt/dict/FileStager/FileStagerDict.rootmap --merged-file /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/x86_64-slc5-gcc43-opt/lib/DaVinci_v25r0Dict.rootmap
+INFO:LockFile:2010-06-24_13:27:52 - Locking on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock
+INFO:LockFile:2010-06-24_13:27:52 - Lock on /project/bfys/dremensk/new/DaVinci_v25r0/InstallArea/gaudi_build_lock released
+#CMT---> (constituents.make) FileStagerGen done
+#CMT---> (constituents.make) Building FileStagerDict.make
+#CMT---> Info: Library FileStagerDict
+#CMT---> (constituents.make) Starting FileStagerDict
+#CMT---> FileStagerDict : library ok
+#CMT---> FileStagerDict ok
+#CMT---> installation done
+#CMT---> (constituents.make) FileStagerDict done
+#CMT---> all ok.
+gmake[1]: Leaving directory `/project/bfys/dremensk/new/DaVinci_v25r0/FileStager/cmt'
+Thu Jun 24 13:27:54 CEST 2010
+# Building group cmt_actions
+#CMT---> Info: Execute action make => gmake bin=../x86_64-slc5-gcc43-opt/ cmt_actions
+gmake[1]: Entering directory `/project/bfys/dremensk/new/DaVinci_v25r0/FileStager/cmt'
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/x86_64-slc5-gcc43-opt.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/setup.make
+#CMT---> (Makefile.header) Rebuilding ../x86_64-slc5-gcc43-opt/constituents.make
+#CMT---> cmt_actions ok.
+gmake[1]: Leaving directory `/project/bfys/dremensk/new/DaVinci_v25r0/FileStager/cmt'
+Thu Jun 24 13:28:05 CEST 2010
